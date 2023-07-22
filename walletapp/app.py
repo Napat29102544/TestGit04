@@ -1,72 +1,18 @@
-# Built-in
-# Queue + Stack
-
-from queue import Queue, LifoQueue
-
-def run_q():
-    # Initializing
-    q = Queue(maxsize=3)
-
-    q.put(11) # Python built-in use "put" for Enqueue
-    q.put(12)
-    q.put(13)
-
-    if q.full():
-        print("Full")
-    else:
-        print("Not full")
-
-    print("Now, Dequeue the element out of Queue")
-
-    print(q.get()) # Python built-in use "get" for Dequeue
-
-    if q.full():
-        print("Full")
-    else:
-        print("Not full")
-
-    print(q.get())
-    print(q.get())
-
-    if q.empty():
-        print("Empty")
-    else:
-        print("Not empty")
-
-    print('Number of elements in a queue:' + str(q.qsize()))
-
-
-def run_stack():
-    # Initializing
-    stack = LifoQueue(maxsize=3)
-    stack.put(11) # Python built-in use "tut" for Push
-    stack.put(12)
-    stack.put(13)
-
-    if stack.full():
-        print("Full")
-    else:
-        print("Not full")
-
-    print("Now, POP() the element out of Stack")
-
-    print(stack.get()) # Python built-in use "Get" for Dequeue
-
-    if stack.full():
-        print("Full")
-    else:
-        print("Not full")
-
-    print(stack.get())
-    print(stack.get())
-
-    if stack.empty():
-        print("Empty")
-    else:
-        print("Not empty")
-
-    print('Number of elements in a stack:' + str(stack.qsize()))
+def q01(archon_name):
+    if archon_name == 'Barbatos':
+        return "Once a mere elemental spirit who existed among the winds, the entity known as Barbatos gained power through the faith of the people of Old Mondstadt during their rebellion against Decarabian, the God of Storms and founder of the nation of Mondstadt. After Decarabian's death, Barbatos ascended to godhood as the Anemo Archon and reestablished Mondstadt in its current form.\n\nCurrently, Barbatos wanders the world as the bard Venti, although he is mostly seen around Mondstadt."
+    elif archon_name == 'Morax':
+        return "Rex Lapis is the God of Contracts, Commerce, and the Warrior God — among many other names. He was the Geo Archon and is the oldest of 'The Seven,' and possibly being one of the oldest, if not the oldest, gods at over six thousand years old. He is shrouded in a plethora of legends; both true and exaggerated, often depicting him as an all-conquering, powerful deity."
+    elif archon_name == 'Beelzebub':
+        return "Raiden Ei (Japanese: 雷電影 Raiden Ei), also known by her Goetic name Beelzebub, is the God of Eternity and the current Electro Archon who presides over Inazuma. She is a member of The Seven who also currently functions as the Raiden Shogun of Inazuma."
+    elif archon_name == 'Buer':
+        return "Lesser Lord Kusanali, also known by her Goetic name Buer, is the God of Wisdom and the current Dendro Archon among The Seven who presides over Sumeru and the new incarnation of the Dendro Archon, created by Greater Lord Rukkhadevata from the purest branch of Irminsul to succeed her. She currently resides in her vessel as Nahida."
+    else :
+        return "Archon not found"
 
 def run():
-    #run_q()
-    run_stack()
+    archon_name = input("Enter the Archon's name: ")
+    result = q01(archon_name)
+    print(result)
+
+run()
