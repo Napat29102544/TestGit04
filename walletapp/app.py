@@ -50,8 +50,8 @@ def run_02():
         result = 99                                                                     # result of this sub-problem
 
         for j in range(1, n + 1):                                                       # we have to travel all nodes j in mask and end the path at last node
-            if (city & (1 << j)) != 0 and j != i and j != 1:                            # travelling all nodes in mask except i and then travel back from node j to node i taking
-                result = min(result, fun(j, city & (~(1 << i))) + dist[j][i])           # the shortest path take the minimum of all possible j nodes
+            if (city & (1 << j)) != 0 and j != i and j != 1:                            # travelling all nodes in city except i and then travel back from node j to node i 
+                result = min(result, fun(j, city & (~(1 << i))) + dist[j][i])           # taking the shortest path take the minimum of all possible j nodes
         memo[i][city] = result                                                          # storing the minimum value
         return result
 
